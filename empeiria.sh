@@ -150,7 +150,7 @@ EOF
   # включение и запуск службы
   sudo systemctl daemon-reload
   sudo systemctl enable emped
-  sudo systemctl restart emped && sudo journalctl -u emped -f
+  sudo systemctl restart emped
 }
 
 # Функция для проверки статуса синхронизации ноды Empeiria
