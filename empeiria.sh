@@ -217,20 +217,18 @@ show_menu() {
   echo "1. Установить ноду Empeiria"
   echo "2. Проверить статус синхронизации ноды Empeiria"
   echo "3. Создать кошелек Empeiria Wallet"
-  echo "4. Запросить токены на кошелек"
-  echo "5. Создать валидатора Empeiria"
-  echo "6. Проверить логи ноды Empeiria"
-  echo "0. Выйти"
+  echo "4. Создать валидатора Empeiria"
+  echo "5. Проверить логи ноды Empeiria"
+  echo "6. Выйти"
   echo ""
   read -p "Выберите пункт меню: " choice
   case $choice in
     1) install_node ;;
     2) check_sync_status ;;
     3) create_wallet ;;
-    4) request_tokens ;;
-    5) create_validator ;;
-    6) show_logs ;;
-    0) exit 0 ;;
+    4) create_validator ;;
+    5) show_logs ;;
+    6) exit 0 ;;
     *) echo "Неверный выбор, попробуйте снова." ;;
   esac
   show_menu
