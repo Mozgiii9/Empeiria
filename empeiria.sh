@@ -141,8 +141,8 @@ EOF
   printGreen "8. Загрузка snapshot и запуск узла..." && sleep 1
   # сброс и загрузка снапшота
   emped tendermint unsafe-reset-all --home $HOME/.empe-chain
-  if curl -s --head curl https://server-5.itrocket.net/testnet/empeiria/empeiria_2024-07-31_766480_snap.tar.lz4 | head -n 1 | grep "200" > /dev/null; then
-    curl https://server-5.itrocket.net/testnet/empeiria/empeiria_2024-07-31_766480_snap.tar.lz4 | lz4 -dc - | tar -xf - -C $HOME/.empe-chain
+  if curl -s --head curl https://server-5.itrocket.net/testnet/empeiria/empeiria_2024-08-01_781124_snap.tar.lz4 | head -n 1 | grep "200" > /dev/null; then
+    curl https://server-5.itrocket.net/testnet/empeiria/empeiria_2024-08-01_781124_snap.tar.lz4 | lz4 -dc - | tar -xf - -C $HOME/.empe-chain
   else
     echo "Snapshot не найден"
   fi
