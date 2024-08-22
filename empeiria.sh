@@ -68,8 +68,10 @@ install_node() {
   printGreen "4. Установка бинарного файла..." && sleep 1
   # загрузка бинарного файла
   cd $HOME
-  curl -LO https://github.com/empe-io/empe-chain-releases/raw/master/v0.1.0/emped_linux_amd64.tar.gz
-  tar -xvf emped_linux_amd64.tar.gz 
+  curl -LO https://github.com/empe-io/empe-chain-releases/raw/master/v0.2.2/emped_v0.2.2_linux_amd64.tar.gz
+  tar -xvf emped_v0.2.2_linux_amd64.tar.gz
+  rm emped_linux_amd64.tar.gz
+  chmod +x emped
   mv emped ~/go/bin
 
   printGreen "5. Настройка и инициализация приложения..." && sleep 1
@@ -141,8 +143,8 @@ EOF
   printGreen "8. Загрузка snapshot и запуск узла..." && sleep 1
   # сброс и загрузка снапшота
   emped tendermint unsafe-reset-all --home $HOME/.empe-chain
-  if curl -s --head curl https://server-5.itrocket.net/testnet/empeiria/empeiria_2024-08-05_838242_snap.tar.lz4 | head -n 1 | grep "200" > /dev/null; then
-    curl https://server-5.itrocket.net/testnet/empeiria/empeiria_2024-08-05_838242_snap.tar.lz4 | lz4 -dc - | tar -xf - -C $HOME/.empe-chain
+  if curl -s --head curl https://server-5.itrocket.net/testnet/empeiria/empeiria_2024-08-22_1070215_snap.tar.lz4 | head -n 1 | grep "200" > /dev/null; then
+    curl https://server-5.itrocket.net/testnet/empeiria/empeiria_2024-08-22_1070215_snap.tar.lz4 | lz4 -dc - | tar -xf - -C $HOME/.empe-chain
   else
     echo "Snapshot не найден"
   fi
